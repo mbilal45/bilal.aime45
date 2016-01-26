@@ -1,0 +1,41 @@
+<h1>Editing</h1>
+ 
+<%= form_for :student, url: student_path(@student), method: :patch do |f| %>
+ 
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@student.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+    <p>
+    <%= f.label :class %><br>
+    <%= f.text_field :class_ch %>
+  </p>
+ 
+  <p>
+    <%= f.label :section %><br>
+    <%= f.text_area :section %>
+  </p>
+  <p>
+    <%= f.label :session %><br>
+    <%= f.text_field :session %>
+  </p>
+  <p>
+    <%= f.label :Incharge %><br>
+    <%= f.text_field :incharge %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

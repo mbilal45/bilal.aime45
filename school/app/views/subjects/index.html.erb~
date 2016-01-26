@@ -1,0 +1,19 @@
+<h1>All Records</h1>
+ 
+<table>
+ 
+  <% @teachers.each do |s| %>
+    <tr>
+    <th><%= s.id %></th>
+  </tr>
+    <tr>
+      <td><%= s.name %></td>
+      <td><%= s.specialize %></td>
+      <td><%= s.designation %></td>
+    </tr>
+    <tr>
+    <td><%= link_to 'Show', teacher_path(s) %></td>
+      <td><%= link_to 'Edit', edit_teacher_path(s) %></td>
+      </tr>
+  <% end %>
+</tabl

@@ -1,0 +1,18 @@
+<h1>All Records</h1>
+ 
+<table>
+ 
+  <% @subjects.each do |s| %>
+    <tr>
+    <th><%= s.id %></th>
+  </tr>
+    <tr>
+      <td><%= s.sub_name %></td>
+      <td><%= s.teacher_name %></td>
+    </tr>
+    <tr>
+    <td><%= link_to 'Show', subject_path(s) %></td>
+      <td><%= link_to 'Edit', edit_subject_path(s) %></td>
+      </tr>
+  <% end %>
+</tabl

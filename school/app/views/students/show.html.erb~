@@ -1,0 +1,19 @@
+<h1>Show Page</h1>
+
+<p>
+  <strong>Class:</strong>
+  <%= @article.class_ch %>
+</p>
+ 
+<p>
+  <strong>Section:</strong>
+  <%= @article.section %>
+</p>
+<p>
+  <strong>Session:</strong>
+  <%= @article.session %>
+</p>
+<p>
+  <strong>Incharge:</strong>
+  <%= @article.incharge %>
+</p>

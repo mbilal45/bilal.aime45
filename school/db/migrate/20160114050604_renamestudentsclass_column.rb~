@@ -1,0 +1,4 @@
+class RenamestudentsclassColumn < ActiveRecord::Migration
+  def change
+  end
+end

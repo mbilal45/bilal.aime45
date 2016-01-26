@@ -1,0 +1,54 @@
+<%= form_for @subject,:validate => true do |t| %>
+ 
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@subject.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @subject.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= t.label :Subject %><br>
+    <%= t.text_field  :sub_name %>
+  </p>
+ 
+  <p>
+    <%= t.label :Teacher %><br>
+    <%= t.text_area :teacher_name %>
+  </p>
+  <p>
+  <%= check_box_tag(:pet_dog) %>
+<%= label_tag(:pet_dog, "I own a dog") %>
+<%= check_box_tag(:pet_cat) %>
+<%= label_tag(:pet_cat, "I own a cat") %>
+ </p>
+ <p>
+ <%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "I am younger than 21") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "I'm over 21") %>
+ </p>
+ 
+ <p>
+ <%= label_tag(:name, "Search name") %>
+ <%= search_field(:user, :name) %>
+ </p>
+ <p>
+  <%= t.file_field :picture %>
+ </p>
+ <p>
+<%= select_date Date.today, prefix: :start_date %>
+ </p>
+ 
+  <p>
+    <%= t.submit %>
+  </p>
+ 
+<% end %>
